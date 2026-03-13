@@ -1,14 +1,24 @@
-<div class="input-container">
-  <app-email-input
-    placeholder="Username or email"
-    [value]="email"
-    (valueChange)="onEmailChange($event)">
-  </app-email-input>
+<div class="input-container">    
+  
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+  <app-input
+    placeholder="Username or emaiddl"
+    formControlName="email">
+  </app-input>
 
   <app-password-input
     placeholder="Password"
-    [value]="password"
-    (valueChange)="onPasswordChange($event)">
+    formControlName="password">
   </app-password-input>
+
+  <button type="submit" [disabled]="loginForm.invalid">
+    Login
+  </button>
+
+</form>
+
 </div>
+
+
 

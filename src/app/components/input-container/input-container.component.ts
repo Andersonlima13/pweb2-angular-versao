@@ -1,25 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmailInputComponent } from '../email-input/email-input.component';
-import { PasswordInputComponent } from '../password-input/password-input.component';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+
+import { InputComponent } from '../form-controls/input/input.component';
+import { PasswordInputComponent } from '../form-controls/password-input/password-input.component';
 
 @Component({
   selector: 'app-input-container',
-  imports: [CommonModule, EmailInputComponent, PasswordInputComponent],
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    InputComponent,
+    PasswordInputComponent
+  ],
   templateUrl: './input-container.component.html',
   styleUrl: './input-container.component.css'
+
 })
 export class InputContainerComponent {
-  email: string = '';
-  password: string = '';
 
-  onEmailChange(value: string): void {
-    this.email = value;
-    console.log('Email changed:', this.email);
+  private fb = inject(FormBuilder);
+
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]]
+  });
+
+  onSubmit() {
+    console.log(this.loginForm.value);
   }
 
-  onPasswordChange(value: string): void {
-    this.password = value;
-    console.log('Password changed:', this.password);
-  }
 }
