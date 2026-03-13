@@ -1,0 +1,14 @@
+<div class="input-container">
+  <app-email-input
+    placeholder="Username or email"
+    [value]="email"
+    (valueChange)="onEmailChange($event)">
+  </app-email-input>
+
+  <app-password-input
+    placeholder="Password"
+    [value]="password"
+    (valueChange)="onPasswordChange($event)">
+  </app-password-input>
+</div>
+

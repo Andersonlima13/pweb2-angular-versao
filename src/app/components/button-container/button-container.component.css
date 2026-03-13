@@ -1,0 +1,22 @@
+.button-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+  background-color: aqua;
+}
+
+.button-container.direction-row {
+  flex-direction: row;
+}
+
+.button-container.direction-column {
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .button-container.direction-row {
+    flex-direction: column;
+  }
+}

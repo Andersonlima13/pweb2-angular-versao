@@ -1,0 +1,9 @@
+<button 
+  [style.backgroundColor]="backgroundColor"
+  [style.color]="textColor"
+  [disabled]="disabled"
+  (click)="handleClick()"
+  class="btn">
+  <img *ngIf="icon" [src]="icon" alt="icon" class="btn-icon" />
+  {{ text }}
+</button>
