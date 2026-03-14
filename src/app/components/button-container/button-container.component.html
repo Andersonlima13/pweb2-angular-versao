@@ -1,16 +1,3 @@
 <div class="button-container" [ngClass]="'direction-' + direction" [style.gap.px]="gap">
-  <app-button 
-    *ngFor="let btn of buttons"
-    [text]="btn.text"
-    [backgroundColor]="btn.backgroundColor"
-    [textColor]="btn.textColor"
-    [icon]="btn.icon"
-    (onClick)="btn.onClick()">
-  </app-button>
-
-
-
-
-
+  <ng-content></ng-content>
 </div>
-
