@@ -1,36 +1,34 @@
 .btn {
-  /* Dimensões proporcionais e consistentes */
-  padding: 14px 28px;
+  /* ✅ Altura fixa — mesma dos inputs */
+  height: 46px;
+  min-height: unset;          /* remove o min-height que brigava */
+  padding: 0 20px;            /* só padding horizontal */
+  
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 4px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
-  
-  /* Layout */
   cursor: pointer;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   
-  /* Tamanho */
   width: 100%;
-  min-height: 48px;
   box-sizing: border-box;
   
-  /* Estilos visuais */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
 .btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0.88;
+  /* ❌ removido: transform e box-shadow */
 }
 
 .btn:active:not(:disabled) {
-  transform: translateY(0);
+  opacity: 0.75;
 }
 
 .btn:disabled {
@@ -41,4 +39,6 @@
 .btn-icon {
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
 }

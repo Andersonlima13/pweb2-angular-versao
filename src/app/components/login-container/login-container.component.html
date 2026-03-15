@@ -19,18 +19,28 @@
         (onClick)="signUpWithMicrosoft()">
       </app-button>
 
+   
+    </app-button-container>
+
+   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <app-input-container>
+        <app-input           placeholder="Username or email" formControlName="email"></app-input>
+        <app-password-input  placeholder="Password"          formControlName="password"></app-password-input>
+      </app-input-container>
+    </form>
+
+    <app-button-container>
       <app-button
-        text="Create Account"
-        backgroundColor="#6C5CE7"
+        text="Sign up"
+        backgroundColor="#4285F4"
         textColor="#FFFFFF"
-        (onClick)="createAccount()">
+        icon="assets/google-icon.svg"
+        (onClick)="signUpWithGoogle()">
       </app-button>
     </app-button-container>
 
-    <app-input-container [form]="loginForm" (submitted)="onSubmit()">
-      <app-input        placeholder="Username or email" formControlName="email"></app-input>
-      <app-password-input placeholder="Password"       formControlName="password"></app-password-input>
-    </app-input-container>
+      <p>Esqueceu a senha ? clique aqui!</p>
+      <p>Acesse nossos termos de serviço</p>
 
 
   

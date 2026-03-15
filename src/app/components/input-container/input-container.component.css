@@ -1,23 +1,7 @@
 .input-container {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
   width: 100%;
-  gap: 15px;
-  background-color: rgb(95, 182, 182);
-}
-
-
-
-.input-container.direction-row {
-  flex-direction: row;
-}
-
-
-.input-container.direction-row {
-  flex-direction: row;
-}
-
-.input-container.direction-column {
+  display: flex;
   flex-direction: column;
+  gap: 10px;
+  background-color: rgb(173, 90, 22);
 }
