@@ -1,12 +1,14 @@
-<app-login-container title="Login">
+<app-login-container title="Tela de Registro">
 
+
+
+
+
+  
   <app-button-container socialButtons direction="column" [gap]="15">
-    <app-button text="Sign in with Google"></app-button>
-    <app-button text="Sign in with Microsoft"></app-button>
+    <app-button text="Sign up with Google"></app-button>
+    <app-button text="Sign up with Microsoft"></app-button>
   </app-button-container>
-
-
-
 
   <form loginForm [formGroup]="loginForm">
     <app-input-container>
@@ -15,14 +17,12 @@
     </app-input-container>
   </form>
 
-
-
   <app-button-container loginActions>
-    <app-button text="Sign in" backgroundColor="#4285F4"></app-button>
+    <app-button text="Sign up" backgroundColor="#4285F4"></app-button>
   </app-button-container>
 
   <ng-container loginFooter>
-    <p>Esqueceu a senha? <a href="#">Clique aqui!</a></p>
+    <p>Já tem uma conta? <a href="/login">Clique aqui!</a></p>
   </ng-container>
 
 </app-login-container>

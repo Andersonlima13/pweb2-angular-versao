@@ -2,51 +2,11 @@
   <div class="login-box">
     <h2>{{ title }}</h2>
 
-    <app-button-container direction="column" [gap]="15">
-      <app-button
-        text="Sign up with Google"
-        backgroundColor="#4285F4"
-        textColor="#FFFFFF"
-        icon="assets/google-icon.svg"
-        (onClick)="signUpWithGoogle()">
-      </app-button>
+    <ng-content select="[socialButtons]"></ng-content>
+    <ng-content select="[loginForm]"></ng-content>
+    <ng-content select="[loginActions]"></ng-content>
+    <ng-content select="[loginFooter]"></ng-content>
 
-      <app-button
-        text="Sign up with Microsoft"
-        backgroundColor="#0078D4"
-        textColor="#FFFFFF"
-        icon="assets/microsoft-icon.svg"
-        (onClick)="signUpWithMicrosoft()">
-      </app-button>
-
-   
-    </app-button-container>
-
-   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <app-input-container>
-        <app-input           placeholder="Username or email" formControlName="email"></app-input>
-        <app-password-input  placeholder="Password"          formControlName="password"></app-password-input>
-      </app-input-container>
-    </form>
-
-    <app-button-container>
-      <app-button
-        text="Sign up"
-        backgroundColor="#4285F4"
-        textColor="#FFFFFF"
-        icon="assets/google-icon.svg"
-        (onClick)="signUpWithGoogle()">
-      </app-button>
-    </app-button-container>
-
-      <p>Esqueceu a senha ? clique aqui!</p>
-      <p>Acesse nossos termos de serviço</p>
-
-
-  
-    
-   
-    
     <div class="divider"></div>
   </div>
 </div>

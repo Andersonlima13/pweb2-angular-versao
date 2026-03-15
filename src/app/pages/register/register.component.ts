@@ -5,24 +5,21 @@ import { ButtonComponent } from '../../components/button/button.component';
 import { InputContainerComponent } from '../../components/input-container/input-container.component';
 import { InputComponent } from '../../components/form-controls/input/input.component';
 import { PasswordInputComponent } from '../../components/form-controls/password-input/password-input.component';
-import { ReactiveFormsModule,FormGroup,FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup,FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [LoginContainerComponent,ButtonContainerComponent, ButtonComponent,InputContainerComponent,
-    InputComponent ,PasswordInputComponent,ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  selector: 'app-register',
+  imports: [LoginContainerComponent, ButtonContainerComponent,ButtonComponent,InputContainerComponent,InputComponent
+    ,PasswordInputComponent, ReactiveFormsModule,
+  ],
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
-export class LoginComponent {
-
+export class RegisterComponent {
+  
   loginForm = new FormGroup({
     email:    new FormControl(''),
     password: new FormControl(''),
   });
   
-  
-
-
 }

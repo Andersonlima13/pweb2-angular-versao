@@ -13,11 +13,7 @@ import { PasswordInputComponent } from '../form-controls/password-input/password
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    InputContainerComponent,  
-     InputComponent,    
-PasswordInputComponent,
-    ButtonContainerComponent,
-    ButtonComponent
+   
   ],
   templateUrl: './login-container.component.html',
   styleUrl: './login-container.component.css'
