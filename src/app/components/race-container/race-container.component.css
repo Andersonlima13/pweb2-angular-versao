@@ -1,17 +1,23 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* O :host estiliza a própria tag <app-race-container> que está dentro do lobby */
+:host {
+  display: block; /* Muda de inline (padrão do Angular) para block */
+  width: 100%;
+  margin-bottom: 5%; /* Aplica o margin de 5% entre os componentes */
+}
+
+/* Remove a margem do último elemento para não empurrar a tela pra baixo à toa */
+:host:last-child {
+  margin-bottom: 0;
 }
 
 .app-race-container {
-    background-color: #d30a0a;    
-  min-height: 20vh;
+  background-color: #d30a0a;
+  height: 20vh; /* Ocupa 20% da altura da tela (viewport) */
+  width: 100%; /* Garante que ocupa todo o comprimento */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
+  align-items: flex-start; /* Substitui o 'top' (flex-start alinha o conteúdo acima) */
+  justify-content: flex-start; /* Substitui o 'top' (flex-start alinha o conteúdo à esquerda) */
+  box-sizing: border-box;
+  padding: 10px; /* Adicionado um padding leve para o texto não colar nas bordas */
   margin: 0;
 }
