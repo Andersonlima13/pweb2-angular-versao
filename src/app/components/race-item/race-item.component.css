@@ -1,0 +1,79 @@
+.item-container {
+  background-color: #ffffff; /* Fundo branco do card */
+  border-radius: 12px;
+  overflow: hidden; /* Corta o topo colorido se necessário */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-height: 180px;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-orange {
+  background-color: #ff9800; /* Cor laranja do topo */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.header-gray {
+  background-color: #546e7a; /* Cor cinza do topo */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.content {
+  padding: 20px 15px;
+  flex-grow: 1;
+}
+
+.title {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.description {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.footer-orange {
+  background-color: #ffa726;
+  padding: 10px 15px;
+  color: white;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-gray {
+  background-color: #78909c;
+  padding: 10px 15px;
+  color: white;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.status-badge {
+  background-color: #4caf50; /* Ativa (Verde) */
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.status-badge.inactive {
+  background-color: #e53935; /* Inativa (Vermelho) */
+}

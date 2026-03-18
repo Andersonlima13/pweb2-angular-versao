@@ -1,0 +1,19 @@
+.navbar-component {
+  background-color: #512da8; /* Roxo semelhante à imagem */
+  height: 60px; /* Altura fixa para navbar */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  position: fixed; /* Fixa no topo */
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 9999; /* Valor alto para garantir que fique ACIMA de tudo ao rolar */
+}

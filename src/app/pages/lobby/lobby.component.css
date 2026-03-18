@@ -13,13 +13,14 @@ html, body {
 
 
 .app-lobby {
-  background-color: #c9b6b6;
+  background-color: #f0f2f5; /* Fundo branco/cinza claro como na imagem */
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Faz os filhos (races) empilharem verticalmente */
-  align-items: stretch; /* Faz os filhos esticarem para ocupar 100% da largura */
-  justify-content: flex-start; /* Posiciona os filhos no TOPO do lobby */
-  padding: 0;
+  flex-direction: column; 
+  align-items: center; /* Centraliza horizontalmente os containers */
+  justify-content: flex-start; 
+  padding: 100px 0 40px; /* Aumentado o padding superior para compensar a navbar fixa (60px + 40px) */
   margin: 0;
-  overflow-y: auto; /* Permite scroll se houver muitos containers */
+  overflow-y: auto;
+  gap: 20px; /* Espaço entre as linhas de containers */
 }

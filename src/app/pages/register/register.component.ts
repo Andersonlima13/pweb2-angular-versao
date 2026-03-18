@@ -12,9 +12,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [LoginContainerComponent, ButtonContainerComponent,ButtonComponent,InputContainerComponent,InputComponent
-    ,PasswordInputComponent, ReactiveFormsModule,
-  ],
+  imports: [LoginContainerComponent, ButtonContainerComponent, ButtonComponent, InputContainerComponent, InputComponent,
+    PasswordInputComponent, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
