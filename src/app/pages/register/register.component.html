@@ -12,13 +12,19 @@
 
   <form loginForm [formGroup]="loginForm">
     <app-input-container>
-      <app-input placeholder="Email" formControlName="email"></app-input>
-      <app-password-input placeholder="Senha" formControlName="password"></app-password-input>
-    </app-input-container>
+      <app-input placeholder="Nome" formControlName="nome"></app-input>
+      <app-password-input placeholder="Senha" formControlName="senha"></app-password-input>
+    </app-input-container>@if (erro) {<p>{{ erro }}</p>}
   </form>
 
-  <app-button-container loginActions>
-    <app-button text="Sign up" backgroundColor="#4285F4"></app-button>
+
+ <app-button-container loginActions>
+    <!-- (click) chama o método do RegisterComponent -->
+    <app-button 
+      text="Sign up" 
+      backgroundColor="#4285F4"
+      (click)="registrar()">
+    </app-button>
   </app-button-container>
 
   <ng-container loginFooter>

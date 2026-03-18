@@ -18,7 +18,7 @@ export class AuthService {
   private http   = inject(HttpClient);
   private router = inject(Router);
 
-  private apiUrl = `${environment.urlBase}/participante`;
+  private apiUrl = `${environment.urlBase}/participantes`;
 
   // Signal para guardar o participante logado (reativo)
   currentUser = signal<Participante | null>(null);
@@ -36,9 +36,9 @@ export class AuthService {
 
 
 
-  // POST /api/participante/registrar (quando implementar no back)
+  // POST /api/participantes (quando implementar no back) // para registrar um novo participante
   registrar(dto: ParticipanteDto): Observable<Participante> {
-    return this.http.post<Participante>(`${this.apiUrl}/registrar`, dto);
+    return this.http.post<Participante>(`${this.apiUrl}`, dto);
   }
 
   // POST /api/participante/logout
