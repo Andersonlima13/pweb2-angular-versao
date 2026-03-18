@@ -18,14 +18,14 @@ export class AuthService {
   private http   = inject(HttpClient);
   private router = inject(Router);
 
-  private apiUrl = `${environment.apiUrl}/participante`;
+  private apiUrl = `${environment.urlBase}/participante`;
 
   // Signal para guardar o participante logado (reativo)
   currentUser = signal<Participante | null>(null);
 
-  // POST /api/participante/login
+  // POST /api/participante/login   // temporario criar participante
   login(dto: ParticipanteDto): Observable<Participante> {
-    return this.http.post<Participante>(`${this.apiUrl}/login`, dto).pipe(
+    return this.http.post<Participante>(`${this.apiUrl}`, dto).pipe(
       tap(participante => {
         // Salva o participante no estado e no localStorage
         this.currentUser.set(participante);
@@ -33,6 +33,8 @@ export class AuthService {
       })
     );
   }
+
+
 
   // POST /api/participante/registrar (quando implementar no back)
   registrar(dto: ParticipanteDto): Observable<Participante> {
