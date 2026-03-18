@@ -1,6 +1,6 @@
-import { pergunta } from "./pergunta";
+import { PerguntaDto } from "./PerguntaDto";
 
-export interface alternativa {
+export interface AlternativaDto {
     corridaId : number;
     perguntaId : number;
     descricao : string;

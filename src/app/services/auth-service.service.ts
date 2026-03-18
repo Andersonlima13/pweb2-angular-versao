@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../environments/environments';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { Participante } from '../interfaces/models/Participante';
+import { ParticipanteDto } from '../interfaces/dto/ParticipanteDto';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +14,53 @@ import { environment } from '../environments/environments';
 
 
 
-export class AuthServiceService {
-  private http = inject(HttpClient);
+export class AuthService {
+  private http   = inject(HttpClient);
+  private router = inject(Router);
+
   private apiUrl = `${environment.apiUrl}/participante`;
 
+  // Signal para guardar o participante logado (reativo)
+  currentUser = signal<Participante | null>(null);
 
-  
+  // POST /api/participante/login
+  login(dto: ParticipanteDto): Observable<Participante> {
+    return this.http.post<Participante>(`${this.apiUrl}/login`, dto).pipe(
+      tap(participante => {
+        // Salva o participante no estado e no localStorage
+        this.currentUser.set(participante);
+        localStorage.setItem('participante', JSON.stringify(participante));
+      })
+    );
+  }
 
+  // POST /api/participante/registrar (quando implementar no back)
+  registrar(dto: ParticipanteDto): Observable<Participante> {
+    return this.http.post<Participante>(`${this.apiUrl}/registrar`, dto);
+  }
 
+  // POST /api/participante/logout
+  logout(): void {
+    this.http.post(`${this.apiUrl}/logout`, {}).subscribe({
+      complete: () => this.limparSessao()
+    });
+  }
 
+  // Recupera sessão ao recarregar a página
+  restaurarSessao(): void {
+    const salvo = localStorage.getItem('participante');
+    if (salvo) {
+      this.currentUser.set(JSON.parse(salvo));
+    }
+  }
 
+  isLoggedIn(): boolean {
+    return this.currentUser() !== null;
+  }
+
+  private limparSessao(): void {
+    this.currentUser.set(null);
+    localStorage.removeItem('participante');
+    this.router.navigate(['/login']);
+  }
 }

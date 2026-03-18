@@ -1,4 +1,4 @@
-export interface participante {
+export interface ParticipanteDto {
     nome : string;
     senha : string
 }
