@@ -1,0 +1,19 @@
+:host {
+  /* Define que cada item ocupará uma fatia do container */
+  /* Ajuste a largura conforme o número de itens (ex: 30% para caberem 3) */
+  width: 30%; 
+  height: 80%; /* Ocupa quase toda a altura do container pai (que tem 20vh) */
+}
+
+.race-item {
+  background-color: #149608; /* Cor de exemplo para destacar no fundo vermelho */
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}

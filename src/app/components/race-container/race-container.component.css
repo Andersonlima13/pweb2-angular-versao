@@ -15,9 +15,9 @@
   height: 20vh; /* Ocupa 20% da altura da tela (viewport) */
   width: 100%; /* Garante que ocupa todo o comprimento */
   display: flex;
-  align-items: flex-start; /* Substitui o 'top' (flex-start alinha o conteúdo acima) */
-  justify-content: flex-start; /* Substitui o 'top' (flex-start alinha o conteúdo à esquerda) */
+  align-items: center;
+ justify-content: space-between;
   box-sizing: border-box;
-  padding: 10px; /* Adicionado um padding leve para o texto não colar nas bordas */
   margin: 0;
+  padding: 0 20px 20px; /* Padding nas laterais para não colarem na borda da tela */
 }
