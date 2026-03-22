@@ -1,3 +1,8 @@
 <div class="app-race-container">
-  <app-race-component></app-race-component>
+ 
+   @for (corrida of corridas; track corrida.id) {
+    <app-race-item [corrida]="corrida" />
+  }
+
+  
 </div>

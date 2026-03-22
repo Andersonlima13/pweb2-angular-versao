@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
+import { Corrida } from '../../interfaces/models/Corrida';
 
 @Component({
   selector: 'app-race-item',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './race-item.component.css'
 })
 export class RaceItemComponent {
+  @Input() corrida! : Corrida;
 
 }

@@ -1,14 +1,13 @@
-<!-- Card Amarelo Exemplo -->
 <div class="item-container">
   <div class="header-orange">
-    <span>ID: 001</span>
-    <span class="status-badge">Ativa</span>
+    <span>ID: {{ corrida.id }}</span>
+    <span class="status-badge">{{ corrida.id}}</span>
   </div>
   <div class="content">
-    <div class="title">Corrida de Matemática</div>
-    <div class="description">Teste seu conhecimento de matemática</div>
+    <div class="title">{{ corrida.titulo }}</div>
+    <div class="description">{{ corrida.descricao }}</div>
   </div>
   <div class="footer-orange">
-    <i class="icon-pergunta"></i> 10 perguntas
+    <i class="icon-pergunta"></i> {{ corrida.perguntas }} perguntas
   </div>
 </div>

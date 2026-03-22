@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { environment } from '../environments/environments';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -42,11 +42,11 @@ export class AuthService {
   }
 
   // POST /api/participante/logout
-  logout(): void {
-    this.http.post(`${this.apiUrl}/logout`, {}).subscribe({
-      complete: () => this.limparSessao()
-    });
-  }
+  logout(): Observable<void> {
+  return this.http.post<void>(`${this.apiUrl}/logout`, {}).pipe(
+    tap(() => this.limparSessao())
+  );
+}
 
   // Recupera sessão ao recarregar a página
   restaurarSessao(): void {
@@ -56,13 +56,13 @@ export class AuthService {
     }
   }
 
-  isLoggedIn(): boolean {
-    return this.currentUser() !== null;
-  }
+  isLoggedIn = computed(() => this.currentUser() !== null);
 
   private limparSessao(): void {
     this.currentUser.set(null);
     localStorage.removeItem('participante');
     this.router.navigate(['/login']);
   }
+
+  
 }
